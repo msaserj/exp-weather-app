@@ -12,12 +12,13 @@ const API_KEY = '93b5c17a4627cdc80ff8d87be6fb768e';
 export default class App extends Component {
     state = {
         isLoading: true,
-        temp: 0
+        temp: 0,
+        condition: ""
     }
     getWeather = async (latitude: number, longitude: number) => {
-        const {data} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`)
-        this.setState({isLoading: false, temp: Math.round(data.main.temp)})
-        console.log("AAAAAA", data)
+        const {data: {main: {temp}, weather}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`)
+        this.setState({isLoading: false, temp: Math.round(temp), condition: weather[0].main})
+        console.log("AAAAAA", temp)
     }
 
     getLocation = async () => {
@@ -40,7 +41,7 @@ export default class App extends Component {
     render() {
         return (
             <>
-                {this.state.isLoading? <Loading/> : <Weather temp={this.state.temp}/>}
+                {this.state.isLoading? <Loading/> : <Weather temp={this.state.temp} condition={this.state.condition}/>}
                 <StatusBar style="auto"/>
             </>
 

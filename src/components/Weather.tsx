@@ -3,6 +3,7 @@ import {View, Text, StyleSheet} from "react-native";
 
 type WeatherType = {
     temp: number
+    condition: string
 }
 
 export const Weather = (props: WeatherType) => {
@@ -10,6 +11,7 @@ export const Weather = (props: WeatherType) => {
       <>
       <View style={styles.container}>
           <Text>{props.temp}</Text>
+          <Text>{props.condition}</Text>
       </View>
       </>
   )
