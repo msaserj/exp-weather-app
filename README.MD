@@ -24,7 +24,7 @@
 </p>
 
 
-<h2 align="center"><a  href="https://msaserj.github.io/inc-socialnetwork">Live Demo</a></h2>
+[//]: # (<h2 align="center"><a  href="https://msaserj.github.io/inc-socialnetwork">Live Demo</a></h2>)
 
 [//]: # (### [Contributions are Welcome]&#40;https://github.com/silent-lad/VueSolitaire/blob/master/CONTRIBUTING.md&#41;)
 
@@ -36,18 +36,19 @@
 
 ## About the project.
 
-Simple React-Native EWeather App
+Simple React-Native Weather App
+with openweathermap api
 
 ## Technologies
 
 **React-Native**,
 **TS**,
-**SCSS**.
+**CSS**.
 
 
 ## Future scope
 
-- Add documentation for components such as StoryBook.
+- .
 
 ## My Home Page
 
